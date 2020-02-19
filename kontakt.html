@@ -5,31 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style">
 </head>
 <body>
     <div class="topnav">
-        <a href="index.html">Hem</a>
-        <a href="topic.html">Topic</a>
-        <a href="kontakt.html">Kontakt</a>
-        <a href="trådar.html">trådar</a>
+        <a href="index">Hem</a>
+        <a href="topic">Topic</a>
+        <a href="kontakt">Kontakt</a>
+        <a href="tradar">trådar</a>
       </div>
       <div style="padding-left:16px">
         <h2></h2>
       </div>¨
-
-
+      
       <div class="form">
-      <form action="kontakt.html">
+        <form action="kontakt.html">
+          
+          <label for="login">Login Name</label><br>
+          <input type="text" id="Namn" name="Name"><br>
+          <label for="password">Password:</label><br>
+          <input type="password" id="password" name="Password"><br><br>
+          <input type="submit" value="Submit">
+        </form> 
+      
+
+
+      <div class="register">
+      <form action="/register" method="POST">
+        <label for="mail">Email</label><br>
+        <input type="email" id="Email" name="Email"><br>
         <label for="login">Login Name</label><br>
         <input type="text" id="Namn" name="Name"><br>
         <label for="password">Password:</label><br>
-        <input type="text" id="password" name="password"><br><br>
+        <input type="password" id="Password" name="Password"><br><br>
         <input type="submit" value="Submit">
       </form> 
     </div>
 
-    
+
       
     
 </body>
