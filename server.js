@@ -1,6 +1,11 @@
 const express = require("express")
 const app = express()
 const bcryptjs = require('bcryptjs')
+const myModule = require('./myModule');
+
+app.get("/", (req, res) => {
+  res.render("index.ejs")
+})  
 
 app.use(express.json())
 app.use(express.urlencoded())
@@ -24,10 +29,14 @@ app.get('/index', (req, res) => {
   res.sendFile(__dirname + "\\index.html")
 })
 
-app.post('/register', function (req, res) {
-  console.log(req.body.Name, req.body.Password, req.body.Email)
-  res.sendFile(__dirname + "\\kontakt.html")
-
+app.post("/register", (req, res) =>
+{
+  let email=req.body.email;
+  let name=req.body.name;
+  let password=req.body.password;
+  console.log("email: "+email+" name: "+name+" password: "+password);
+  myModule.accReg(email,name,password);
+  res.redirect('/kontakt');
 });
 
 //var users = []

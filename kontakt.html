@@ -11,7 +11,7 @@
     <div class="topnav">
         <a href="index">Hem</a>
         <a href="topic">Topic</a>
-        <a href="kontakt">Kontakt</a>
+        <a href="kontakt">Registrera / Logga in</a>
         <a href="tradar">trådar</a>
       </div>
       <div style="padding-left:16px">
@@ -20,7 +20,7 @@
       
       <div class="form">
         <form action="kontakt.html">
-          
+          <h1>Logga in</h1>
           <label for="login">Login Name</label><br>
           <input type="text" id="Namn" name="Name"><br>
           <label for="password">Password:</label><br>
@@ -32,12 +32,13 @@
 
       <div class="register">
       <form action="/register" method="POST">
-        <label for="mail">Email</label><br>
-        <input type="email" id="Email" name="Email"><br>
-        <label for="login">Login Name</label><br>
-        <input type="text" id="Namn" name="Name"><br>
+        <h1>Registrera</h1>
+        <label for="email">Email</label><br>
+        <input type="email" id="Email" name="email"><br>
+        <label for="name">Login Name</label><br>
+        <input type="text" id="Namn" name="name"><br>
         <label for="password">Password:</label><br>
-        <input type="password" id="Password" name="Password"><br><br>
+        <input type="password" id="Password" name="password"><br><br>
         <input type="submit" value="Submit">
       </form> 
     </div>
