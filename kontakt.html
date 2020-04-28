@@ -6,13 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $( function() {
+        $( "#datepicker" ).datepicker();
+      } );
+      </script>
 </head>
 <body>
     <div class="topnav">
         <a href="index">Hem</a>
-        <a href="topic">Topic</a>
+        <a href="topic">Trådar</a>
         <a href="kontakt">Registrera / Logga in</a>
-        <a href="tradar">trådar</a>
+        <a href="tradar">Om oss</a>
       </div>
       <div style="padding-left:16px">
         <h2></h2>
@@ -38,13 +47,15 @@
         <label for="name">Login Name</label><br>
         <input type="text" id="Namn" name="name"><br>
         <label for="password">Password:</label><br>
-        <input type="password" id="Password" name="password"><br><br>
+        <input type="password" id="Password" name="password">
+        Date of birth: <input type="text" id="datepicker"></p>
         <input type="submit" value="Submit">
       </form> 
     </div>
 
 
+
       
     
 </body>
-</html>-
+</html>

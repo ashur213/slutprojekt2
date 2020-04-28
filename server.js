@@ -4,7 +4,7 @@ const bcryptjs = require('bcryptjs')
 const myModule = require('./myModule');
 
 app.get("/", (req, res) => {
-  res.render("index.html")
+  res.render("/index.html")
 })  
 
 app.use(express.json())
