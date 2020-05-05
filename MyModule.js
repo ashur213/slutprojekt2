@@ -15,11 +15,23 @@ var userSchema = new Schema({
     password: String
 });
 var postSchema = new Schema({
-    email: String,
+    name: String,
     topic: String,
     message: String
 });
+exports.postThread = function (name, topic, text) {
+    var Thread = mongoose.model('Thread', postSchema)
+    var thread = new Thread({name: name, topic: topic, message: text})
+    thread.save()
+    console.log("Thread posted")
+};
 
+exports.getThreads = function () {
+    var Thread = mongoose.model('Thread', postSchema)
+    var threads = Thread.find()
+    return threads;
+
+};
 exports.accReg = function (email, name, password) {
     var Acc = mongoose.model('Register', userSchema)
     var acc = new Acc({email: email, name: name, password: password})

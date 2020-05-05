@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style">
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="index">Hem</a>
+        <a href="topic">Trådar</a>
+        <a href="kontakt">Registrera / Logga in</a>
+        <a href="tradar">Om oss</a>
+    </div>
+    <div style="padding-left:16px">
+
+    </div>
+    <div class="topic">
+        <form action="/tradar" method="post">
+            <h1>Logga in</h1>
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="message" class="label1">Your message</label><br>
+            <textarea name="message" rows="6" required></textarea> <br>
+            <label for="topic">topic</label><br>
+            <input type="text" id="topic" name="topic"><br><br>
+            <input type="submit" value="Submit">
+
+        </form>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Topic</th>
+                    <th>Name</th>
+                    <th>Message</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <% for( x in data) { %>
+                <tr>
+                    <th><%-data[x].topic %></th>
+                    <th><%-data[x].name %></th>
+                    <th><%-data[x].message %></th>
+
+
+                </tr>
+                <% } %>
+                </tbody>
+                <div id = "alertdiv"></div>
+            </table>
+        </div>
+
+</body>
+
+
+</html>

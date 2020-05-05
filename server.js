@@ -4,15 +4,18 @@ const bcryptjs = require('bcryptjs')
 const myModule = require('./myModule');
 
 app.get("/", (req, res) => {
-  res.render("/index.html")
+  res.sendFile(__dirname + "\\index.html")
+
 })  
 
 app.use(express.json())
 app.use(express.urlencoded())
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + "\\index.html")
-})
+
+
+
 app.get('/kontakt', (req, res) => {
   res.sendFile(__dirname + "\\kontakt.html")
 })
@@ -22,8 +25,9 @@ app.get('/style', (req, res) => {
 app.get('/tradar', (req, res) => {
   res.sendFile(__dirname + "\\tradar.html")
 })
-app.get('/topic', (req, res) => {
-  res.sendFile(__dirname + "\\topic.html")
+app.get('/topic', async (req, res) => {
+var data = await myModule.getThreads() 
+  res.render('topic.ejs', {data});
 })
 app.get('/index', (req, res) => {
   res.sendFile(__dirname + "\\index.html")
@@ -37,6 +41,16 @@ app.post("/register", (req, res) =>
   console.log("email: "+email+" name: "+name+" password: "+password);
   myModule.accReg(email,name,password);
   res.redirect('/kontakt');
+});
+
+app.post("/tradar", (req, res) =>
+{
+  let name=req.body.name;
+  let topic=req.body.topic;
+  let text=req.body.message;
+  console.log("name: "+name+" topic: "+topic+" text: "+text);
+  myModule.postThread(name,topic,text);
+  res.redirect('/topic');
 });
 
 //var users = []
