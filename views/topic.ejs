@@ -5,56 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style">
 </head>
 
 <body>
-    <div class="topnav">
-        <a href="index">Hem</a>
-        <a href="topic">Trådar</a>
-        <a href="kontakt">Registrera / Logga in</a>
-        <a href="tradar">Om oss</a>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+        <a class="navbar-brand" href="index">Ashur's Forum</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-grow-0 " id="navbarNavDropdown">
+            <ul class="navbar-nav justify-content-center">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index">Hem </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="topic">Trådar <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="kontakt">Registrera / Logga in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="tradar">Om Oss</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div style="padding-left:16px">
 
     </div>
+
+    <div class="container">
+        <div class="row text-white">
+            <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                <h1 class="text-dark">Skapa en tråd</h1>
+                <div class="px-2">
+                    <form action="/tradar" method="post" class="justify-content-center">
+                        <div class="form-group">
+                            <input type="text" id="name" class="form-control" name="name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" rows="6" class="form-control" required
+                                placeholder="Message (Max 30 Words) "></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="topic" class="form-control" name="topic" placeholder="Topic">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">Post</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="topic">
-        <form action="/tradar" method="post">
-            <h1>Logga in</h1>
-            <label for="name">Name</label><br>
-            <input type="text" id="name" name="name"><br>
-            <label for="message" class="label1">Your message</label><br>
-            <textarea name="message" rows="6" required></textarea> <br>
-            <label for="topic">topic</label><br>
-            <input type="text" id="topic" name="topic"><br><br>
-            <input type="submit" value="Submit">
-
-        </form>
-
-        <div class="table-responsive">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Topic</th>
-                    <th>Name</th>
-                    <th>Message</th>
-
-                </tr>
-                </thead>
-                <tbody>
-                <% for( x in data) { %>
-                <tr>
-                    <th><%-data[x].topic %></th>
-                    <th><%-data[x].name %></th>
-                    <th><%-data[x].message %></th>
+        <div class="list-group" id="thread-list">
+            <% for( x in data) { %>
+            <a href="#" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">Name: <%-data[x].name %></h5>
+                    Message: <%-data[x].message %>
+                    <small>Topic: <%-data[x].topic %></small>
+                </div>
 
 
-                </tr>
-                <% } %>
-                </tbody>
-                <div id = "alertdiv"></div>
-            </table>
+            </a>
+            <% } %>
         </div>
 
 </body>

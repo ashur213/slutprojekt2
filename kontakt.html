@@ -1,61 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="style">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-      $( function() {
-        $( "#datepicker" ).datepicker();
-      } );
-      </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $("#datepicker").datepicker();
+    });
+  </script>
 </head>
+
 <body>
-    <div class="topnav">
-        <a href="index">Hem</a>
-        <a href="topic">Trådar</a>
-        <a href="kontakt">Registrera / Logga in</a>
-        <a href="tradar">Om oss</a>
-      </div>
-      <div style="padding-left:16px">
-        <h2></h2>
-      </div>¨
-      
-      <div class="form">
-        <form action="kontakt.html">
-          <h1>Logga in</h1>
-          <label for="login">Login Name</label><br>
-          <input type="text" id="Namn" name="Name"><br>
-          <label for="password">Password:</label><br>
-          <input type="password" id="password" name="Password"><br><br>
-          <input type="submit" value="Submit">
-        </form> 
-      
-
-
-      <div class="register">
-      <form action="/register" method="POST">
-        <h1>Registrera</h1>
-        <label for="email">Email</label><br>
-        <input type="email" id="email" name="email"><br>
-        <label for="name">Login Name</label><br>
-        <input type="text" id="Namn" name="name"><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="Password" name="password">
-        Date of birth: <input type="text" id="datepicker"></p>
-        <input type="submit" value="Submit">
-      </form> 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <a class="navbar-brand" href="index">Ashur's Forum</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse flex-grow-0 " id="navbarNavDropdown">
+      <ul class="navbar-nav justify-content-center">
+        <li class="nav-item active">
+          <a class="nav-link" href="index">Hem </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="topic">Trådar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="kontakt">Registrera / Logga in <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tradar">Om Oss</a>
+        </li>
+      </ul>
     </div>
+  </nav>
+  <div style="padding-left:16px">
+    <h2></h2>
+  </div>
+
+
+  <div class="container reg-pagez">
+    <div class="row">
+      <div class="col">
+        <div id="login">
+          <h1>Login</h1>
+          <form action="login" method="POST">
+            <div class="form-group">
+              <label for="exampleInputEmail1">User name</label>
+              <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                placeholder="Enter Username">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="col">
+
+        <div class="register">
+          <form action="/register" method="POST">
+            <h1>Registrera</h1>
+            <div class="form-group">
+              <label for="email">Email</label><br>
+              <input type="email" id="email" class="form-control" name="email"><br>
+              <label for="name">Login Name</label><br>
+              <input type="text" class="form-control" id="Namn" name="name"><br>
+              <label for="password">Password:</label><br>
+              <input type="password" class="form-control" id="Password" name="password"><br>
+              <label>Date of birth:</label> <br>
+              <input type="text" name="birth" class="form-control" id="datepicker"></p>
+              <input type="submit" class="btn btn-primary" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
-      
-    
+
+
+
+
 </body>
+
 </html>

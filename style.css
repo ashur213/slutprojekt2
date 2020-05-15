@@ -31,4 +31,25 @@ body {
     width: 100px;
     margin: auto;
   }
-  
+  #login{
+    width: 200px;
+    justify-content: center;
+  }
+
+  #thread-list{
+    margin: 100px;
+  }
+
+.reg-pagez {
+  margin-top: 150px;
+}
+
+.navbar .navbar-collapse {
+  text-align: center !important;
+}
+
+footer, #portfolio {
+  background-color: #EEEFEF;
+  padding: 30px 0;
+}
+

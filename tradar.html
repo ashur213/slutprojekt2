@@ -1,48 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="style">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-      $( function() {
-        $( "#accordion" ).accordion();
-      } );
-      </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $("#accordion").accordion();
+    });
+  </script>
 </head>
+
 <body>
-    <div class="topnav">
-      <a href="index">Hem</a>
-      <a href="topic">Trådar</a>
-      <a href="kontakt">Registrera / Logga in</a>
-      <a href="tradar">Om oss</a>
-      </div>
-      <div style="padding-left:16px"> 
-        <h2>Trådar</h2>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+    <a class="navbar-brand" href="index">Ashur's Forum</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse flex-grow-0 " id="navbarNavDropdown">
+        <ul class="navbar-nav justify-content-center">
+            <li class="nav-item active">
+                <a class="nav-link" href="index">Hem</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="topic">Trådar</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="kontakt">Registrera / Logga in</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tradar">Om Oss <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+    </div>
+</nav>
+<div class="container"><div style="padding-left:16px">
+  <h2 class="text-center mt-4">Om oss</h2>
 
-      </div>
-      <div id="accordion">
-        <h3>tjenare</h3>
-        <div>
-          <p>
-            [Vers 1: Gee]
+</div>
+<div id="accordion">
+  <h3>tjenare</h3>
+  <div>
+    <p>
+      [Vers 1: Gee]
 
-            hej niklas 
-          </p>
-        </div>
-        <h3>Vem är vi</h3>
-        <div>
-          <p>
-          vi är ett forum
-          </p>
-        </div>
-        </div>
-    
+      hej niklas
+    </p>
+  </div>
+  <h3>Vem är vi</h3>
+  <div>
+    <p>
+      vi är ett forum
+    </p>
+  </div>
+</div></div>
+  
+
 </body>
+
 </html>
